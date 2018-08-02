@@ -2,6 +2,8 @@
 
 A fun little project to play with Jupyter Notebooks, Scikit-learn, and neural nets with Keras.
 
+[![Run on FloydHub](https://static.floydhub.com/button/button-small.svg)](https://floydhub.com/run?template=https://github.com/tb0yd/rootfinder)
+
 #### Goal
 
 To train a neural network to learn Arabic morphology.
@@ -46,3 +48,6 @@ Score: 58.8%
 #### How to use
 
 Just install Jupyter Notebook and run `jupyter notebook` in this folder, and select one of the `ipynb` files.
+
+Or click this button to open JupyterLab workspace on FloydHub:
+[![Run on FloydHub](https://static.floydhub.com/button/button-small.svg)](https://floydhub.com/run?template=https://github.com/tb0yd/rootfinder)
