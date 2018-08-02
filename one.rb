@@ -1,7 +1,7 @@
 require 'json'
 require 'htmlentities'
 
-wordlist = File.read("arabeyes.wordlist").split("\n")
+wordlist = File.read(ARGV[2] || "arabeyes.wordlist").split("\n")
 starti = ARGV[0].to_i
 endi = ARGV[1].to_i
 
