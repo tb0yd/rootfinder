@@ -20,7 +20,7 @@ Pull requests welcome :)
 
 #### Sample output
 
-The output is formatted as "accuracy: [output, input]" with prediction on the end if incorrect.
+The output is formatted as "accuracy: [correctAnswer, input]" with output on the end if incorrect.
 
 ```
 Correct: ['تبديلي', 'بدل']
