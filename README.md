@@ -20,6 +20,8 @@ Pull requests welcome :)
 
 #### Sample output
 
+The output is formatted as "accuracy: [output, input]" with prediction on the end if incorrect.
+
 ```
 Correct: ['تبديلي', 'بدل']
 Missed:  ['الألياف', 'ليف'] Predicted: للف
