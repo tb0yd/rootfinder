@@ -42,3 +42,7 @@ Correct: ['متوسطة', 'وسط']
 Missed:  ['سوق', 'سوق'] Predicted: وقق
 Score: 58.8%
 ```
+
+#### How to use
+
+Just install Jupyter Notebook and run `jupyter notebook` in this folder, and select one of the `ipynb` files.
