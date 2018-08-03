@@ -10,9 +10,9 @@ To train a neural network to learn Arabic morphology.
 
 * Scripts for data mining
 * Starter data
-* 2 iterations of the model: roots.ipynb and roots-with-noroots.ipynb.
+* 3 iterations of the model: roots.py.ipynb, roots-latin.py.ipynb and roots-with-noroots.py.ipynb.
 
-`roots-with-noroots.ipynb` is named weird, but it just means we are more intelligent about tracking words that are "mabniyy", or undeclined.
+`roots-with-noroots.py.ipynb` is named weird, but it just means we are more intelligent about tracking words that are "mabniyy", or undeclined.
 
 It's not very accurate (about 50%) so it's pretty addictive to work on. Surely, someone, somewhere, has done this better, but we aren't solving world hunger here, just having some nerdy fun.
 
@@ -20,146 +20,146 @@ Pull requests welcome :)
 
 #### Sample output
 
-The output is formatted as "accuracy: [correctAnswer, input]" with output on the end if incorrect.
+The below output is from roots-latin.py.ipynb, which has Latinization in the display stage in Buckwalter mode.
 
 ```
-Missed:  ['مادي', 'مدد'] Predicted: مدو
-Missed:  ['برتقالي', ''] Predicted: رقل
-Missed:  ['تسلسلي', 'سلسل'] Predicted: سلل
-Correct: ['وسيط', 'وسط']
-Correct: ['مرشح', 'رشح']
-Correct: ['تفعيل', 'فعل']
-Missed:  ['اختيار', 'خير'] Predicted: خور
-Correct: ['جمع', 'جمع']
-Missed:  ['الأداء', 'ادي'] Predicted: ادو
-Missed:  ['لليسار', 'يسر'] Predicted: لير
-Missed:  ['نجدة', 'نجد'] Predicted: ندو
-Correct: ['مخلوع', 'خلع']
-Missed:  ['الترتيب', 'رتب'] Predicted: ربب
-Missed:  ['للزلق', 'زلق'] Predicted: للق
-Correct: ['سببي', 'سبب']
-Missed:  ['بالحاسوب', 'حسب'] Predicted: حوح
-Correct: ['طور', 'طور']
-Correct: ['جذري', 'جذر']
-Correct: ['توازن', 'وزن']
-Correct: ['ثابتة', 'ثبت']
-Correct: ['خارجية', 'خرج']
-Correct: ['نُسْخَةٌ', 'نسخ']
-Missed:  ['نكهة', 'نكه'] Predicted: نهر
-Correct: ['تصليح', 'صلح']
-Missed:  ['المشترك', 'شرك'] Predicted: ششر
-Correct: ['قاسم', 'قسم']
-Missed:  ['عزل', 'عزل'] Predicted: علل
-Missed:  ['مُدخل', 'دخل'] Predicted: ددل
-Missed:  ['الإنجاز', 'نجز'] Predicted: نجج
-Missed:  ['متقطع', 'قطع'] Predicted: ققع
-Correct: ['يكرر', 'كرر']
-Missed:  ['متوفر', 'وفر'] Predicted: وفف
-Correct: ['شعاعية', 'شعع']
-Missed:  ['هوجاء', 'هوج'] Predicted: وجا
-Missed:  ['النمط', 'نمط'] Predicted: ننط
-Missed:  ['مُسَمىّ', 'سما'] Predicted: سسم
-Correct: ['عكس', 'عكس']
-Correct: ['دافع', 'دفع']
-Missed:  ['ضغط', 'ضغط'] Predicted: ضطط
-Correct: ['مغلف', 'غلف']
-Missed:  ['مَخبأ', 'خبء'] Predicted: خخب
-Correct: ['ضبابي', 'ضبب']
-Correct: ['محوري', 'حور']
-Missed:  ['التصليح', 'صلح'] Predicted: صصل
-Correct: ['مأزق', 'ازق']
-Correct: ['حقيقياً', 'حقق']
-Correct: ['طريق', 'طرق']
-Missed:  ['نواة', 'نوا'] Predicted: نوو
-Missed:  ['شهر', 'شهر'] Predicted: شرر
-Missed:  ['رسائل', 'رسل'] Predicted: رءل
-Correct: ['حروف', 'حرف']
-Correct: ['مكيف', 'كيف']
-Missed:  ['مَضْروب', 'ضرب'] Predicted: ضضر
-Missed:  ['البوصة', ''] Predicted: وبب
-Correct: ['النشاط', 'نشط']
-Missed:  ['ملايين', ''] Predicted: مين
-Missed:  ['إِدَانَة', 'دين'] Predicted: ودن
-Missed:  ['البرمجيات', 'برمج'] Predicted: ربم
-Missed:  ['تلفزيونيّة', ''] Predicted: وفا
-Missed:  ['مفاتيح', 'فتح'] Predicted: ففح
-Correct: ['إجراءات', 'جرا']
-Correct: ['صدّ', 'صدد']
-Missed:  ['باليد', 'يدد'] Predicted: بدد
-Missed:  ['أزمة', 'ازم'] Predicted: ززم
-Correct: ['عشوائية', 'عشو']
-Missed:  ['مستمرة', 'مرر'] Predicted: مرم
-Correct: ['الخطأ', 'خطا']
-Correct: ['مُعامل', 'عمل']
-Correct: ['القرارات', 'قرر']
-Correct: ['مغلق', 'غلق']
-Correct: ['إشباع', 'شبع']
-Correct: ['بطيء', 'بطء']
-Correct: ['انتشار', 'نشر']
-Correct: ['يعمل', 'عمل']
-Correct: ['مضافة', 'ضيف']
-Correct: ['نيابة', 'نوب']
-Correct: ['دَخْل', 'دخل']
-Missed:  ['الأدنى', 'دنو'] Predicted: ادو
-Missed:  ['تعويذة', 'عوذ'] Predicted: عوا
-Missed:  ['سجل', 'سجل'] Predicted: سلل
-Correct: ['عالية', 'علو']
-Correct: ['مكتبة', 'كتب']
-Correct: ['إدراج', 'درج']
-Correct: ['تقرير', 'قرر']
-Missed:  ['ذكي', 'ذكا'] Predicted: ككر
-Correct: ['تقريباً', 'قرب']
-Correct: ['التوصيلات', 'وصل']
-Correct: ['طرفيّة', 'طرف']
-Missed:  ['تَنويت', 'نوت'] Predicted: نوا
-Missed:  ['عقد', 'عقد'] Predicted: عدد
-Correct: ['انضمامي', 'ضمم']
-Correct: ['مثالي', 'مثل']
-Missed:  ['مسيًر', 'سير'] Predicted: سسر
-Correct: ['قانونية', 'قنن']
-Correct: ['ذاتي', 'ذوت']
-Correct: ['الشكل', 'شكل']
-Correct: ['مشترك', 'شرك']
-Correct: ['مقهى', 'قهو']
-Missed:  ['تطويع', 'طوع'] Predicted: ططع
-Missed:  ['داليّة', 'دلو'] Predicted: دلل
-Missed:  ['أو', ''] Predicted: اوو
-Correct: ['نداء', 'ندو']
-Missed:  ['ديناميكياً', ''] Predicted: دون
-Missed:  ['بصر', 'بصر'] Predicted: صرر
-Correct: ['مجلد', 'جلد']
-Correct: ['إيقاف', 'وقف']
-Missed:  ['الاستفهام', 'فهم'] Predicted: سلف
-Correct: ['قواعد', 'قعد']
-Correct: ['إقلاع', 'قلع']
-Correct: ['مصفوفة', 'صفف']
-Missed:  ['استطلاع', 'طلع'] Predicted: سطع
-Correct: ['نقطتان', 'نقط']
-Correct: ['استعداد', 'عدد']
-Missed:  ['ظرف', 'ظرف'] Predicted: ررف
-Missed:  ['مُجمَل', 'جمل'] Predicted: ممل
-Correct: ['جلب', 'جلب']
-Correct: ['متصلة', 'وصل']
-Missed:  ['الإطار', 'اطر'] Predicted: ططر
-Correct: ['تزايد', 'زيد']
-Missed:  ['أعظم', 'عظم'] Predicted: عمم
-Correct: ['متجانس', 'جنس']
-Correct: ['معدّل', 'عدل']
-Correct: ['تقصّص', 'قصص']
-Missed:  ['دي', ''] Predicted: دور
-Correct: ['صور', 'صور']
-Correct: ['خفيفة', 'خفف']
-Missed:  ['حَدسي', 'حدس'] Predicted: حدد
-Correct: ['شريط', 'شرط']
-Correct: ['المستوى', 'سوا']
-Correct: ['واسعة', 'وسع']
-Missed:  ['المتعددة', 'عدد'] Predicted: ودد
-Correct: ['أعيان', 'عين']
-Correct: ['عامة', 'عمم']
-Correct: ['منفعة', 'نفع']
-Missed:  ['حجاب', 'حجب'] Predicted: حبب
-Missed:  ['التحديث', 'حدث'] Predicted: حدد
-Score: 56.6%
+Missed.  Input: التراجع (AltrAjE).     Answer: رجع (rjE).    Predicted: ررع (rrE).
+Missed.  Input: المركزية (Almrkzyp).   Answer: ركز (rkz).    Predicted: ررك (rrk).
+Missed.  Input: القوائم (AlqwA}m).     Answer: قوم (qwm).    Predicted: ققم (qqm).
+Missed.  Input: متسلسلة (mtslslp).     Answer: سلسل (slsl).  Predicted: سسلل (ssll).
+Correct. Input: جاسوس (jAsws).         Answer: جسس (jss).
+Correct. Input: مجدداً (mjddAF).       Answer: جدد (jdd).
+Correct. Input: تنْويت (tnowyt).       Answer: نوت (nwt).
+Missed.  Input: المحتوى (AlmHtwY).     Answer: حوا (HwA).    Predicted: حوح (HwH).
+Correct. Input: رزمة (rzmp).           Answer: رزم (rzm).
+Correct. Input: حامل (HAml).           Answer: حمل (Hml).
+Correct. Input: يتوسطه (ytwsTh).       Answer: وسط (wsT).
+Correct. Input: رفع (rfE).             Answer: رفع (rfE).
+Correct. Input: احتياطي (AHtyATy).     Answer: حوط (HwT).
+Missed.  Input: الاسم (AlAsm).         Answer: سما (smA).    Predicted: سسم (ssm).
+Correct. Input: حرارة (HrArp).         Answer: حرر (Hrr).
+Missed.  Input: التزاوج (AltzAwj).     Answer: زوج (zwj).    Predicted: وزز (wzz).
+Correct. Input: دُوَلي (duwaly).       Answer: دول (dwl).
+Missed.  Input: لمورد (lmwrd).         Answer: ورد (wrd).    Predicted: ممر (mmr).
+Correct. Input: إحصاء (<HSA').         Answer: حصا (HSA).
+Missed.  Input: كمومي (kmwmy).         Answer:  ().          Predicted: كمم (kmm).
+Correct. Input: قائمة (qA}mp).         Answer: قوم (qwm).
+Correct. Input: مراسم (mrAsm).         Answer: رسم (rsm).
+Correct. Input: هاتف (hAtf).           Answer: هتف (htf).
+Correct. Input: مطمور (mTmwr).         Answer: طمر (Tmr).
+Correct. Input: رقعة (rqEp).           Answer: رقع (rqE).
+Correct. Input: حاسوبي (HAswby).       Answer: حسب (Hsb).
+Missed.  Input: للترقية (lltrqyp).     Answer: رقا (rqA).    Predicted: لقق (lqq).
+Missed.  Input: التوثيق (Altwvyq).     Answer: وثق (wvq).    Predicted: ووق (wwq).
+Correct. Input: رئيسية (r}ysyp).       Answer: رءس (r's).
+Missed.  Input: مستطيل (mstTyl).       Answer: طول (Twl).    Predicted: سول (swl).
+Missed.  Input: ملف (mlf).             Answer: لفف (lff).    Predicted: ففف (fff).
+Missed.  Input: مُقتطف (muqtTf).       Answer: قطف (qTf).    Predicted: ققط (qqT).
+Correct. Input: خارطة (xArTp).         Answer: خرط (xrT).
+Correct. Input: بالنفاذ (bAlnfA*).     Answer: نفذ (nf*).
+Missed.  Input: المعطيات (AlmETyAt).   Answer: عطا (ETA).    Predicted: عطع (ETE).
+Missed.  Input: الموعد (AlmwEd).       Answer: وعد (wEd).    Predicted: ومد (wmd).
+Correct. Input: توفر (twfr).           Answer: وفر (wfr).
+Correct. Input: مربع (mrbE).           Answer: ربع (rbE).
+Correct. Input: عمليات (EmlyAt).       Answer: عمل (Eml).
+Correct. Input: متصل (mtSl).           Answer: وصل (wSl).
+Correct. Input: أعداد (>EdAd).         Answer: عدد (Edd).
+Missed.  Input: نصفية (nSfyp).         Answer: نصف (nSf).    Predicted: نفو (nfw).
+Missed.  Input: زرً (zrF).             Answer: زرر (zrr).    Predicted: زرا (zrA).
+Correct. Input: مشروط (m$rwT).         Answer: شرط ($rT).
+Missed.  Input: مكافِئ (mkAfi}).       Answer: كفء (kf').    Predicted: ككف (kkf).
+Missed.  Input: يدمج (ydmj).           Answer: دمج (dmj).    Predicted: دمم (dmm).
+Missed.  Input: طوب (Twb).             Answer: طوب (Twb).    Predicted: طبب (Tbb).
+Correct. Input: مواصلات (mwASlAt).     Answer: وصل (wSl).
+Correct. Input: طِبْقُ (Tiboqu).       Answer: طبق (Tbq).
+Correct. Input: وراثية (wrAvyp).       Answer: ورث (wrv).
+Missed.  Input: ضغط (DgT).             Answer: ضغط (DgT).    Predicted: ضطط (DTT).
+Missed.  Input: الإنترنت (Al<ntrnt).   Answer:  ().          Predicted: دون (dwn).
+Missed.  Input: الأشغال (Al>$gAl).     Answer: شغل ($gl).    Predicted: ششل ($$l).
+Correct. Input: الأخبار (Al>xbAr).     Answer: خبر (xbr).
+Correct. Input: تعريفات (tEryfAt).     Answer: عرف (Erf).
+Correct. Input: الذاتي (Al*Aty).       Answer: ذوت (*wt).
+Missed.  Input: لليمين (llymyn).       Answer: يمن (ymn).    Predicted: لين (lyn).
+Correct. Input: إطلاق (<TlAq).         Answer: طلق (Tlq).
+Missed.  Input: التفرّع (Altfr~E).     Answer: فرع (frE).    Predicted: قفع (qfE).
+Missed.  Input: بُنية (bunyp).         Answer: بنا (bnA).    Predicted: بنن (bnn).
+Missed.  Input: مكافئة (mkAf}p).       Answer: كفء (kf').    Predicted: كفف (kff).
+Correct. Input: التطبيق (AltTbyq).     Answer: طبق (Tbq).
+Correct. Input: توسيع (twsyE).         Answer: وسع (wsE).
+Correct. Input: الإرسال (Al<rsAl).     Answer: رسل (rsl).
+Missed.  Input: خلفية (xlfyp).         Answer: خلف (xlf).    Predicted: خلو (xlw).
+Missed.  Input: الغابة (AlgAbp).       Answer: غيب (gyb).    Predicted: لبب (lbb).
+Correct. Input: كسولة (kswlp).         Answer: كسل (ksl).
+Correct. Input: عمودي (Emwdy).         Answer: عمد (Emd).
+Correct. Input: يضاعف (yDAEf).         Answer: ضعف (DEf).
+Correct. Input: خطاط (xTAT).           Answer: خطط (xTT).
+Missed.  Input: متناهي (mtnAhy).       Answer: نهو (nhw).    Predicted: ننه (nnh).
+Correct. Input: دقيقة (dqyqp).         Answer: دقق (dqq).
+Correct. Input: مضافة (mDAfp).         Answer: ضيف (Dyf).
+Correct. Input: الخدمة (Alxdmp).       Answer: خدم (xdm).
+Missed.  Input: أو (>w).               Answer:  ().          Predicted: ووا (wwA).
+Correct. Input: بديل (bdyl).           Answer: بدل (bdl).
+Correct. Input: فوريه (fwryh).         Answer: فور (fwr).
+Correct. Input: استمارة (AstmArp).     Answer: مور (mwr).
+Correct. Input: عيًنة (EyFnp).         Answer: عين (Eyn).
+Correct. Input: استخرج (Astxrj).       Answer: خرج (xrj).
+Missed.  Input: الفحص (AlfHS).         Answer: فحص (fHS).    Predicted: ففف (fff).
+Missed.  Input: الجلسة (Aljlsp).       Answer: جلس (jls).    Predicted: ججل (jjl).
+Missed.  Input: باعث (bAEv).           Answer: بعث (bEv).    Predicted: بعع (bEE).
+Missed.  Input: الانترنت (AlAntrnt).   Answer:  ().          Predicted: نون (nwn).
+Missed.  Input: تناوبي (tnAwby).       Answer: نوب (nwb).    Predicted: ننب (nnb).
+Correct. Input: تكرار (tkrAr).         Answer: كرر (krr).
+Correct. Input: طول (Twl).             Answer: طول (Twl).
+Missed.  Input: اكتشاف (Akt$Af).       Answer: كشف (k$f).    Predicted: ككف (kkf).
+Missed.  Input: مع (mE).               Answer:  ().          Predicted: ععع (EEE).
+Correct. Input: برمجية (brmjyp).       Answer: برمج (brmj).
+Correct. Input: عُشري (Eu$ry).         Answer: عشر (E$r).
+Missed.  Input: برتقالي (brtqAly).     Answer:  ().          Predicted: بقل (bql).
+Correct. Input: زيارة (zyArp).         Answer: زور (zwr).
+Correct. Input: تأشير (t>$yr).         Answer: اشر (A$r).
+Missed.  Input: معالجة (mEAljp).       Answer: علج (Elj).    Predicted: علل (Ell).
+Correct. Input: سرقة (srqp).           Answer: سرق (srq).
+Missed.  Input: منتج (mntj).           Answer: نتج (ntj).    Predicted: نجج (njj).
+Missed.  Input: ترقية (trqyp).         Answer: رقا (rqA).    Predicted: رقق (rqq).
+Missed.  Input: البديهية (Albdyhyp).   Answer: بده (bdh).    Predicted: بدد (bdd).
+Missed.  Input: المراجع (AlmrAjE).     Answer: رجع (rjE).    Predicted: ررع (rrE).
+Missed.  Input: إيقاف (<yqAf).         Answer: وقف (wqf).    Predicted: ويف (wyf).
+Correct. Input: لافتة (lAftp).         Answer: لفت (lft).
+Correct. Input: حلقة (Hlqp).           Answer: حلق (Hlq).
+Correct. Input: مراجعة (mrAjEp).       Answer: رجع (rjE).
+Correct. Input: عكسية (Eksyp).         Answer: عكس (Eks).
+Correct. Input: مخطط (mxTT).           Answer: خطط (xTT).
+Correct. Input: أقراص (>qrAS).         Answer: قرص (qrS).
+Correct. Input: مشهد (m$hd).           Answer: شهد ($hd).
+Missed.  Input: العطب (AlETb).         Answer: عطب (ETb).    Predicted: عطع (ETE).
+Correct. Input: خفيفة (xfyfp).         Answer: خفف (xff).
+Missed.  Input: مبني (mbny).           Answer: بنا (bnA).    Predicted: بنن (bnn).
+Missed.  Input: حركي (Hrky).           Answer: حرك (Hrk).    Predicted: حكك (Hkk).
+Correct. Input: مكيف (mkyf).           Answer: كيف (kyf).
+Missed.  Input: انصهار (AnShAr).       Answer: صهر (Shr).    Predicted: نصر (nSr).
+Correct. Input: تهليل (thlyl).         Answer: هلل (hll).
+Missed.  Input: إيداع (<ydAE).         Answer: ودع (wdE).    Predicted: ويع (wyE).
+Correct. Input: الألفية (Al>lfyp).     Answer: الف (Alf).
+Missed.  Input: أولا (>wlA).           Answer: اول (Awl).    Predicted: الل (All).
+Correct. Input: فرع (frE).             Answer: فرع (frE).
+Correct. Input: الذاكرة (Al*Akrp).     Answer: ذكر (*kr).
+Correct. Input: رأسي (r>sy).           Answer: رءس (r's).
+Missed.  Input: مواءمة (mwA'mp).       Answer: وءم (w'm).    Predicted: ووم (wwm).
+Missed.  Input: الاموال (AlAmwAl).     Answer: مول (mwl).    Predicted: ومل (wml).
+Correct. Input: جانب (jAnb).           Answer: جنب (jnb).
+Correct. Input: احتقان (AHtqAn).       Answer: حقن (Hqn).
+Missed.  Input: حقل (Hql).             Answer: حقل (Hql).    Predicted: حلل (Hll).
+Missed.  Input: قتلة (qtlp).           Answer: قتل (qtl).    Predicted: قلل (qll).
+Correct. Input: جدار (jdAr).           Answer: جدر (jdr).
+Correct. Input: نافذة (nAf*p).         Answer: نفذ (nf*).
+Missed.  Input: البوصة (AlbwSp).       Answer:  ().          Predicted: وصب (wSb).
+Correct. Input: الصورة (AlSwrp).       Answer: صور (Swr).
+Missed.  Input: هدف (hdf).             Answer: هدف (hdf).    Predicted: هفف (hff).
+Correct. Input: مركَّب (mrka~b).       Answer: ركب (rkb).
+Correct. Input: دوري (dwry).           Answer: دور (dwr).
+Missed.  Input: السّطور (Als~Twr).     Answer: سطر (sTr).    Predicted: سسط (ssT).
+Missed.  Input: غلط (glT).             Answer: غلط (glT).    Predicted: غلو (glw).
+Score: 55.9%
 ```
 
 #### How to use
